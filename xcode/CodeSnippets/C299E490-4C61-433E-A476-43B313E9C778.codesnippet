@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>tableviewcontroller</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>final class &lt;#name#&gt;: UITableViewController {
+
+}
+
+extension &lt;#name#&gt; {
+  func setupViews() {
+
+  }
+
+  func setupNavigationBar() {
+
+  }
+
+  func setupTableView() {
+
+  }
+}
+
+extension &lt;#name#&gt; {
+  override func tableView(
+    _ tableView: UITableView,
+    numberOfRowsInSection section: Int
+  ) -&gt; Int {
+    5
+  }
+
+  override func tableView(
+    _ tableView: UITableView,
+    cellForRowAt indexPath: IndexPath
+  ) -&gt; UITableViewCell {
+
+  }
+
+  override func tableView(
+    _ tableView: UITableView, willDisplay
+    cell: UITableViewCell, forRowAt
+    indexPath: IndexPath
+  ) {
+
+  }
+}
+
+// MARK: Page Presentation
+
+extension &lt;#name#&gt; {
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C299E490-4C61-433E-A476-43B313E9C778</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UITableViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

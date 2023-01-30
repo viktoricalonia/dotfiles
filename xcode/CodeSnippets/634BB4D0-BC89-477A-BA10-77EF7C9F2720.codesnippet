@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>makecoordinator</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>final class &lt;#name#&gt;: ParentCoordinator {
+
+
+  var delegate: CoordinatorDelegate?
+  var children: [Coordinator] = []
+
+  let navigation: UINavigationController
+  let services: ServicesProtocol
+
+  init(
+    services: ServicesProtocol,
+    navigation: UINavigationController = UINavigationController()
+  ) {
+    self.services = services
+    self.navigation = navigation
+  }
+
+  func start() {
+    
+  }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>634BB4D0-BC89-477A-BA10-77EF7C9F2720</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Create: Coordinator</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
