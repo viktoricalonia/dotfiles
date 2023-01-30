@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Find the open version of Xcode
+XCODE="$(ps -e | egrep -m1 -o  '/.*/Xcode[- 0-9.]*\.app')"
+
+# Quit Xcode
+echo "xplode: Quitting Xcode..."
+killall Xcode
+
+# Delete Derived Data (has same effect as Clean and Clean Build Folder)
+echo "xplode: Deleting DerivedData folder..."
+rm -rf "$HOME/Library/Developer/Xcode/DerivedData/"
+
+# Reset Simulators
+echo "xplode: Resetting all Simulators..."
+xcrun simctl shutdown all
+xcrun simctl erase all
+
+# Restart Xcode
+echo "xplode: Opening Xcode..."
+open "$XCODE"
