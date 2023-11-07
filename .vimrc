@@ -59,7 +59,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/gorodinskiy/vim-coloresque.git'
 
 Plugin 'wincent/command-t'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'valloric/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -90,6 +90,6 @@ execute pathogen#infect()
 "= NERD-TREE
 "======================================
 
-map \q :NERDTreeToggle<CR>
+"map \q :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
