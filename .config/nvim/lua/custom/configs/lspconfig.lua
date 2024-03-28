@@ -1,5 +1,12 @@
 local base = require("plugins.configs.lspconfig")
-local on_attach = base.on_attach
+
+local on_attach = function(client, bufnr)
+  if client.name == "copilot" then
+    client._on_insert_enter({})
+  end
+  base.on_attach(client, bufnr)
+end
+
 local capabilities = base.capabilities
 
 local lspConfigUtil = require("lspconfig.util")
@@ -13,7 +20,7 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
 }
 
-lspconfig['sourcekit'].setup({
+lspconfig.sourcekit.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = {"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"},
