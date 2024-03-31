@@ -84,11 +84,16 @@ local plugins = {
     opts = {
       suggestion = {
         enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept_word = true,
-          accept_line = true,
-        },
+    auto_trigger = true,
+    debounce = 75,
+    keymap = {
+      accept = "<M-l>",
+      accept_word = "true",
+      accept_line = "true",
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
       },
       panel = { enabled = false },
       filetypes = {
@@ -116,7 +121,7 @@ local plugins = {
     dependencies = "copilot.lua",
     opts = {},
     config = function(_, opts)
-      require("custom.configs.copilot_cmp")
+      require "custom.configs.copilot_cmp"
     end,
   }
 }
