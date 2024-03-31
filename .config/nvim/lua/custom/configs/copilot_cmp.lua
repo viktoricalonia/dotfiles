@@ -12,7 +12,7 @@ copilot_cmp.setup {
 
   sources = {
     -- Copilot Source
-    { name = "copilot", group_index = 2 },
+    { name = "copilot", group_index = 2, priority = 100 },
     -- Other Sources
     { name = "nvim_lsp", group_index = 2 },
     { name = "path", group_index = 2 },
@@ -40,6 +40,5 @@ copilot_cmp.setup {
       end
     end),
     ["<C-Space>"] = copilot_cmp.mapping.complete(),
-  },
-  event = "InsertEnter",
+  }
 }

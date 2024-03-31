@@ -78,23 +78,22 @@ local plugins = {
   },
   {
     "zbirenbaum/copilot.lua",
-    event = "VeryLazy",
+    event = "InsertEnter",
     cmd = "Copilot",
     build = ":Copilot auth",
     opts = {
-      suggestion = { enabled = true },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept_word = true,
+          accept_line = true,
+        },
+      },
       panel = { enabled = false },
       filetypes = {
         markdown = true,
-        help = true,
-        terraform = false, -- disallow specific filetype
-        sh = function ()
-          if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
-            -- disable for .env files
-            return false
-          end
-          return true
-        end,
+        help = true
       },
     },
   },
@@ -106,24 +105,18 @@ local plugins = {
         dependencies = "copilot.lua",
         opts = {},
         config = function(_, opts)
-          require("custom.configs.copilot_cmp")
+          require "custom.configs.copilot_cmp"
         end,
       },
-    },
-    opts = function(_, opts)
-      table.insert(opts.sources, 1, {
-        name = "copilot",
-        group_index = 1,
-        priority = 100,
-      })
-    end,
+    }
   },
   {
     "zbirenbaum/copilot-cmp",
+    event = "InsertEnter",
     dependencies = "copilot.lua",
     opts = {},
     config = function(_, opts)
-      require("copilot_cmp").setup(opts)
+      require("custom.configs.copilot_cmp")
     end,
   }
 }

@@ -84,6 +84,10 @@ M.dap = {
       "<cmd>XcodebuildCodeActions<CR>",
       "Show code Actions"
     },
+    ["<leader>xco"] = {
+      "<cmd>XcodebuildOpenInXcode<CR>",
+      "Show code Actions"
+    },
   },
   v = {
     ["<leader>xct"] = {
