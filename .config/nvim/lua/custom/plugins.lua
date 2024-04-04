@@ -84,16 +84,16 @@ local plugins = {
     opts = {
       suggestion = {
         enabled = true,
-    auto_trigger = true,
-    debounce = 75,
-    keymap = {
-      accept = "<M-l>",
-      accept_word = "true",
-      accept_line = "true",
-      next = "<M-]>",
-      prev = "<M-[>",
-      dismiss = "<C-]>",
-    },
+        auto_trigger = true,
+        debounce = 75,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = "true",
+          accept_line = "true",
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
       },
       panel = { enabled = false },
       filetypes = {
@@ -101,28 +101,41 @@ local plugins = {
         help = true
       },
     },
+    config = function()
+      require("copilot").setup({})
+    end
   },
   {
-    "nvim-cmp",
+    "hrsh7th/nvim-cmp",
     dependencies = {
       {
         "zbirenbaum/copilot-cmp",
-        dependencies = "copilot.lua",
-        opts = {},
-        config = function(_, opts)
-          require "custom.configs.copilot_cmp"
+        config = function()
+          require("copilot_cmp").setup()
         end,
-      },
+      }
+    },
+    opts = {
+      sources = {
+        { name = "copilot",  group_index = 2 },
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "luasnip",  group_index = 2 },
+        { name = "buffer",   group_index = 2 },
+        { name = "nvim_lua", group_index = 2 },
+        { name = "path",     group_index = 2 },
+      }
     }
   },
   {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    dependencies = "copilot.lua",
-    opts = {},
-    config = function(_, opts)
-      require "custom.configs.copilot_cmp"
-    end,
-  }
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
+  require("custom.configs.conform")
 }
 return plugins

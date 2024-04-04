@@ -23,11 +23,14 @@ lspconfig.clangd.setup {
 lspconfig.sourcekit.setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  cmd = {"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"},
+  cmd = { "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" },
+  formatting = {
+    on_save = true,
+  },
   root_dir = function(filename, _)
     return lspConfigUtil.root_pattern("buildServer.json")(filename)
-      or lspConfigUtil.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
-      or lspConfigUtil.find_git_ancestor(filename)
-      or lspConfigUtil.root_pattern("Package.swift")(filename)
+        or lspConfigUtil.root_pattern("*.xcodeproj", "*.xcworkspace")(filename)
+        or lspConfigUtil.find_git_ancestor(filename)
+        or lspConfigUtil.root_pattern("Package.swift")(filename)
   end,
 })
