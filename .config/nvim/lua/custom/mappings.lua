@@ -88,6 +88,19 @@ M.dap = {
       "<cmd>XcodebuildOpenInXcode<CR>",
       "Show code Actions"
     },
+
+    ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Find symbols in current buffer" },
+
+    ["<leader>a"] = { function() require("harpoon"):list():add() end, "Add file to harpoon" },
+    ["<C-e>"] = { function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, "Add file to harpoon" },
+
+    ["<C-h>"] = { function() require("harpoon"):list():select(1) end, "Navigate to harpoon file 1" },
+    ["<C-j>"] = { function() require("harpoon"):list():select(2) end, "Navigate to harpoon file 2" },
+    ["<C-k>"] = { function() require("harpoon"):list():select(3) end, "Navigate to harpoon file 3" },
+    ["<C-l>"] = { function() require("harpoon"):list():select(4) end, "Navigate to harpoon file 4" },
+
+    ["<C-S-P>"] = { function() require("harpoon"):list():prev() end, "Toggle previous buffer stored in harpoon" },
+    ["<C-S-N>"] = { function() require("harpoon"):list():next() end, "Toggle next buffer stored in harpoon" }
   },
   v = {
     ["<leader>xct"] = {
