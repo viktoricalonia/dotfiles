@@ -64,6 +64,7 @@ local plugins = {
       require("xcodebuild").setup({
         -- put some options here or leave it empty to use default settings
       })
+      require("core.utils").load_mappings("xcodebuild")
     end
   },
   {
@@ -144,6 +145,7 @@ local plugins = {
     config = function()
       local harpoon = require('harpoon')
       harpoon:setup({})
+      require("core.utils").load_mappings("harpoon")
     end
   },
   require("custom.configs.conform"),

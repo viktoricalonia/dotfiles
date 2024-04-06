@@ -12,7 +12,11 @@ M.dap = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
     },
+  },
+}
 
+M.xcodebuild = {
+  n = {
     -- Xcodebuild
     ["<leader>xc"] = {
       "<cmd>XcodebuildPicker<CR>",
@@ -89,6 +93,17 @@ M.dap = {
       "Show code Actions"
     },
 
+  },
+  v = {
+    ["<leader>xct"] = {
+      "<cmd>XcodebuildTestSelected<CR>",
+      "Run Selected Tests"
+    },
+  }
+}
+
+M.harpoon = {
+  n = {
     ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "Find symbols in current buffer" },
 
     ["<leader>a"] = { function() require("harpoon"):list():add() end, "Add file to harpoon" },
@@ -101,14 +116,7 @@ M.dap = {
 
     ["<C-S-P>"] = { function() require("harpoon"):list():prev() end, "Toggle previous buffer stored in harpoon" },
     ["<C-S-N>"] = { function() require("harpoon"):list():next() end, "Toggle next buffer stored in harpoon" }
-  },
-  v = {
-    ["<leader>xct"] = {
-      "<cmd>XcodebuildTestSelected<CR>",
-      "Run Selected Tests"
-    },
   }
-
 }
 
 return M
