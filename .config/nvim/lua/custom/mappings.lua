@@ -12,6 +12,19 @@ M.dap = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
     },
+
+    ["<leader>dxd"] = { function() require("xcodebuild.integrations.dap").build_and_debug() end, "Build and Debug" },
+    ["<leader>dxr"] = { function() require("xcodebuild.integrations.dap").debug_without_build() end, "Debug Without Building" },
+    ["<leader>dxt"] = { function() require("xcodebuild.integrations.dap").debug_tests() end, "Debug Tests" },
+    ["<leader>dxT"] = { function() require("xcodebuild.integrations.dap").debug_class_tests() end, "Debug Class Tests" },
+    ["<leader>dxb"] = { function() require("xcodebuild.integrations.dap").toggle_breakpoint() end, "Toggle Breakpoint" },
+    ["<leader>dxB"] = { function() require("xcodebuild.integrations.dap").toggle_message_breakpoint() end, "Toggle Message Breakpoint" },
+    ["<leader>dxx"] = { function()
+      require("dap").listeners.after["event_terminated"]["me"]()
+      require("xcodebuild.integrations.dap").terminate_session()
+    end,
+      "Terminate Debugger"
+    }
   },
 }
 
@@ -92,7 +105,6 @@ M.xcodebuild = {
       "<cmd>XcodebuildOpenInXcode<CR>",
       "Show code Actions"
     },
-
   },
   v = {
     ["<leader>xct"] = {

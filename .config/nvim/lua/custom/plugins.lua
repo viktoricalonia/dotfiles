@@ -2,7 +2,10 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio"
+    },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -30,12 +33,6 @@ local plugins = {
     },
   },
   {
-    "mfussenegger/nvim-dap",
-    config = function(_, _)
-      require("core.utils").load_mappings("dap")
-    end
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
@@ -54,13 +51,13 @@ local plugins = {
   },
   {
     "wojciech-kulik/xcodebuild.nvim",
-    event = "VeryLazy",
+    event        = "VeryLazy",
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "MunifTanjim/nui.nvim",
       "nvim-tree/nvim-tree.lua", -- if you want the integration with file tree
     },
-    config = function()
+    config       = function()
       require("xcodebuild").setup({
         -- put some options here or leave it empty to use default settings
       })
@@ -148,5 +145,6 @@ local plugins = {
     end
   },
   require("custom.plugins.conform"),
+  require("custom.plugins.nvim-dap"),
 }
 return plugins
