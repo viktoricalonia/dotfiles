@@ -137,7 +137,6 @@ local plugins = {
       })
     end
   },
-  require("custom.configs.conform"),
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -148,6 +147,6 @@ local plugins = {
       require("core.utils").load_mappings("harpoon")
     end
   },
-  require("custom.configs.conform"),
+  require("custom.plugins.conform"),
 }
 return plugins
