@@ -34,6 +34,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
