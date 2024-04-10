@@ -1,13 +1,7 @@
 local base = require("plugins.configs.lspconfig")
 
-local on_attach = function(client, bufnr)
-  if client.name == "copilot" then
-    client._on_insert_enter({})
-  end
-  base.on_attach(client, bufnr)
-end
-
 local capabilities = base.capabilities
+local on_attach = base.on_attach
 
 local lspConfigUtil = require("lspconfig.util")
 local lspconfig = require("lspconfig")
