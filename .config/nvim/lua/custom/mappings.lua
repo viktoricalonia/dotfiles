@@ -105,6 +105,10 @@ M.xcodebuild = {
       "<cmd>XcodebuildOpenInXcode<CR>",
       "Show code Actions"
     },
+    ["<leader>xcte"] = {
+      "<cmd>XcodebuildTestExplorerToggle<CR>",
+      "Toggle XcodeBuild Test Explorer"
+    }
   },
   v = {
     ["<leader>xct"] = {
