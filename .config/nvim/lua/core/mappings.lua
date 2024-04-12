@@ -14,12 +14,6 @@ M.general = {
     ["<C-j>"] = { "<Down>", "Move down" },
     ["<C-k>"] = { "<Up>", "Move up" },
 
-    ["<leader>dd"] = {
-      function()
-        vim.lsp.buf.definition()
-      end,
-      "Go to definition"
-    }
   },
 
   n = {
@@ -59,6 +53,14 @@ M.general = {
       end,
       "LSP formatting",
     },
+
+
+    ["<leader>dd"] = {
+      function()
+        vim.lsp.buf.definition()
+      end,
+      "Go to definition"
+    }
   },
 
   t = {
