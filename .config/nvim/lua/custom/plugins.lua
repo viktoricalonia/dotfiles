@@ -81,24 +81,8 @@ local plugins = {
     cmd = "Copilot",
     build = ":Copilot auth",
     opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        debounce = 75,
-        keymap = {
-          accept = "<M-l>",
-          accept_word = "true",
-          accept_line = "true",
-          next = "<M-]>",
-          prev = "<M-[>",
-          dismiss = "<C-]>",
-        },
-      },
+      suggestion = { enabled = true },
       panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true
-      },
     },
     config = function()
       require("copilot").setup({})
