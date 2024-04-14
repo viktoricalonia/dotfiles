@@ -23,3 +23,7 @@ alias gitsp="git stash pop"
 alias gitpo="git push origin"
 alias gitc="git checkout"
 alias gitfo="git fetch origin"
+
+#Apollo
+alias apollogen="./Pods/Apollo/apollo-ios-cli generate"
+alias apollofetch="./Pods/Apollo/Apollo-ios-cli fetch-schema"
