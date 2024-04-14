@@ -4,4 +4,4 @@
 # Author: @viktoricalonia
 #
 
-ln -s . ~/Library/Develops/Xcode/UserData
+ln -s . ~/Library/Developer/Xcode/UserData
