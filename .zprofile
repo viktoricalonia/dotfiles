@@ -29,3 +29,10 @@ alias gitfo="git fetch origin"
 alias apollogen="./Pods/Apollo/apollo-ios-cli generate"
 alias apollofetch="./Pods/Apollo/Apollo-ios-cli fetch-schema"
 
+#TrackPad Settings
+alias setTrackpadScaling="defaults write -g com.apple.trackpad.scaling"
+
+#Open File in NeoVIM
+alias findf="fd --type f --hidden --exclude .git --exclude Pods | fzf-tmux -p --reverse | xargs nvim"
+
+export PATH="/Users/viktorimmanuelcalonia/Library/Python/3.9/bin:/usr/local/Cellar:$PATH"
