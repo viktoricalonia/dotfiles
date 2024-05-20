@@ -60,7 +60,10 @@ M.general = {
         vim.lsp.buf.definition()
       end,
       "Go to definition"
-    }
+    },
+
+    ["<C-S-j>"] = { "<cmd> m+1 <CR>", "Move line down" },
+    ["<C-S-k>"] = { "<cmd> m-2 <CR>", "Move line up" },
   },
 
   t = {
