@@ -100,12 +100,12 @@ local plugins = {
     },
     opts = {
       sources = {
-        { name = "copilot",  group_index = 2 },
-        { name = "nvim_lsp", group_index = 2 },
-        { name = "luasnip",  group_index = 2 },
-        { name = "buffer",   group_index = 2 },
-        { name = "nvim_lua", group_index = 2 },
-        { name = "path",     group_index = 2 },
+        { name = "copilot",  group_index = 2, max_item_count = 2 },
+        { name = "nvim_lsp", group_index = 2, max_item_count = 20 },
+        { name = "luasnip",  group_index = 2, max_item_count = 2 },
+        { name = "buffer",   group_index = 2, max_item_count = 3 },
+        { name = "nvim_lua", group_index = 2, max_item_count = 1 },
+        { name = "path",     group_index = 2, max_item_count = 5 },
       }
     }
   },
