@@ -1,7 +1,7 @@
 local base = require("plugins.configs.lspconfig")
 
-local capabilities = base.capabilities
 local on_attach = base.on_attach
+local capabilities = base.capabilities
 
 local lspConfigUtil = require("lspconfig.util")
 local lspconfig = require("lspconfig")
@@ -28,3 +28,11 @@ lspconfig.sourcekit.setup({
         or lspConfigUtil.root_pattern("Package.swift")(filename)
   end,
 })
+
+lspconfig.eslint.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
