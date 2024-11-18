@@ -36,3 +36,51 @@ lspconfig.eslint.setup {
   end,
   capabilities = capabilities,
 }
+
+lspconfig.ts_ls.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.jsonls.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.html.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.vimls.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.apex_ls.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.vtsls.setup {
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
