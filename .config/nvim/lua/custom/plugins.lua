@@ -1,26 +1,7 @@
 local plugins = {
-  {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
-    },
-    config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
-    end
-  },
+  require("custom.plugins.nvim-dap"),
+  require("custom.plugins.nvim-dapui"),
+  require("custom.plugins.fidget"),
   {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
@@ -40,31 +21,7 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "clangd",
-        "clang-format",
-        "codelldb",
-      }
-    }
-  },
-  {
-    "wojciech-kulik/xcodebuild.nvim",
-    event        = "VeryLazy",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-tree.lua", -- if you want the integration with file tree
-    },
-    config       = function()
-      require("xcodebuild").setup({
-        -- put some options here or leave it empty to use default settings
-      })
-      require("core.utils").load_mappings("xcodebuild")
-    end
-  },
+  require("custom.plugins.xcodebuild"),
   {
     'nvim-tree/nvim-web-devicons'
   },
@@ -130,6 +87,5 @@ local plugins = {
     end
   },
   require("custom.plugins.conform"),
-  require("custom.plugins.nvim-dap"),
 }
 return plugins
