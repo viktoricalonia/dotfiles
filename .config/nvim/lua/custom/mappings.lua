@@ -20,8 +20,8 @@ M.dap = {
     ["<leader>dxb"] = { function() require("xcodebuild.integrations.dap").toggle_breakpoint() end, "Toggle Breakpoint" },
     ["<leader>dxB"] = { function() require("xcodebuild.integrations.dap").toggle_message_breakpoint() end, "Toggle Message Breakpoint" },
     ["<leader>dxx"] = { function()
-      require("dap").listeners.after["event_terminated"]["me"]()
       require("xcodebuild.integrations.dap").terminate_session()
+      require("dap").listeners.after["event_terminated"]["me"]()
     end,
       "Terminate Debugger"
     }
