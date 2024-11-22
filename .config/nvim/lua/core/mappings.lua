@@ -112,6 +112,9 @@ M.tabufline = {
       end,
       "Close buffer",
     },
+
+    -- close other buffer
+    ["<leader>xx"] = { "<cmd> bufdo bd <CR>", "Close Other Tabs" },
   },
 }
 
