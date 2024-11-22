@@ -4,11 +4,14 @@ local on_attach = base.on_attach
 local capabilities = base.capabilities
 
 local lspConfigUtil = require("lspconfig.util")
-local lspconfig = require("lspconfig")
+local lspconfig = require('lspconfig')
+
+-- check setup configs here
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
 
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -31,7 +34,7 @@ lspconfig.sourcekit.setup({
 
 lspconfig.eslint.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -39,7 +42,7 @@ lspconfig.eslint.setup {
 
 lspconfig.ts_ls.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -47,7 +50,7 @@ lspconfig.ts_ls.setup {
 
 lspconfig.jsonls.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -55,7 +58,7 @@ lspconfig.jsonls.setup {
 
 lspconfig.html.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -63,7 +66,7 @@ lspconfig.html.setup {
 
 lspconfig.vimls.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -71,16 +74,16 @@ lspconfig.vimls.setup {
 
 lspconfig.apex_ls.setup {
   on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
+    client.server_capabilities.signatureHelpProvider = true
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
 }
 
-lspconfig.vtsls.setup {
-  on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
+-- lspconfig.vtsls.setup {
+--   on_attach = function(client, bufnr)
+--     client.resolved_capabilities.signatureHelpProvider = false
+--     on_attach(client, bufnr)
+--   end,
+--   capabilities = capabilities,
+-- }
