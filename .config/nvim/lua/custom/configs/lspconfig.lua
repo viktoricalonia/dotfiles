@@ -11,7 +11,7 @@ local lspconfig = require('lspconfig')
 
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -34,7 +34,7 @@ lspconfig.sourcekit.setup({
 
 lspconfig.eslint.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -42,7 +42,7 @@ lspconfig.eslint.setup {
 
 lspconfig.ts_ls.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -50,7 +50,7 @@ lspconfig.ts_ls.setup {
 
 lspconfig.jsonls.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -58,7 +58,7 @@ lspconfig.jsonls.setup {
 
 lspconfig.html.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -66,7 +66,7 @@ lspconfig.html.setup {
 
 lspconfig.vimls.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
@@ -74,7 +74,7 @@ lspconfig.vimls.setup {
 
 lspconfig.apex_ls.setup {
   on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = true
+    client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
