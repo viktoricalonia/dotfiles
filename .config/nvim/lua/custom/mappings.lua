@@ -130,8 +130,8 @@ M.harpoon = {
     ["<C-k>"] = { function() require("harpoon"):list():select(3) end, "Navigate to harpoon file 3" },
     ["<C-l>"] = { function() require("harpoon"):list():select(4) end, "Navigate to harpoon file 4" },
 
-    ["<C-S-P>"] = { function() require("harpoon"):list():prev() end, "Toggle previous buffer stored in harpoon" },
-    ["<C-S-N>"] = { function() require("harpoon"):list():next() end, "Toggle next buffer stored in harpoon" }
+    ["<C-i>"] = { function() require("harpoon"):list():prev() end, "Toggle previous buffer stored in harpoon" },
+    ["<C-o>"] = { function() require("harpoon"):list():next() end, "Toggle next buffer stored in harpoon" }
   }
 }
 
