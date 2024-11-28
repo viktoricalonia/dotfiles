@@ -2,6 +2,7 @@ local options = {
   filters = {
     dotfiles = false,
     exclude = { vim.fn.stdpath "config" .. "/lua/custom" },
+    custom = { ".DS_Store" },
   },
   disable_netrw = true,
   hijack_netrw = true,
@@ -28,6 +29,10 @@ local options = {
   actions = {
     open_file = {
       resize_window = true,
+      quit_on_open = true,
+      window_picker = {
+        enable = false,
+      },
     },
   },
   renderer = {
