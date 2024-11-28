@@ -23,16 +23,6 @@ local plugins = {
   },
   require("custom.plugins.xcodebuild"),
   {
-    'nvim-tree/nvim-web-devicons'
-  },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require "plugins.configs.lualine"
-    end
-  },
-  {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     cmd = "Copilot",
@@ -57,8 +47,8 @@ local plugins = {
     },
     opts = {
       sources = {
+        { name = "nvim_lsp", group_index = 1, max_item_count = 5 },
         { name = "copilot",  group_index = 2, max_item_count = 2 },
-        { name = "nvim_lsp", group_index = 2, max_item_count = 20 },
         { name = "luasnip",  group_index = 2, max_item_count = 2 },
         { name = "buffer",   group_index = 2, max_item_count = 3 },
         { name = "nvim_lua", group_index = 2, max_item_count = 1 },
