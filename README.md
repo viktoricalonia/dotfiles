@@ -23,17 +23,17 @@ brew install stow
 Clone Repo with 
 
 ```
-git clone https://github.com/viktoricalonia/dotfiles.git $HOME/dotfiles
+git clone https://github.com/viktoricalonia/dotfiles.git
 ```
 
 then 
 
 ```
-cd $HOME/dotfiles
+cd dotfiles
 ```
 
 then 
 
 ```
-stow .
+stow . --target=$HOME --restow
 ```
