@@ -87,3 +87,11 @@ lspconfig.vtsls.setup {
   end,
   capabilities = capabilities,
 }
+
+lspconfig.gopls.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
