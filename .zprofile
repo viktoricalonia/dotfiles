@@ -1,3 +1,6 @@
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 alias setup_appetiser="ssh-add -D;ssh-add ~/.ssh/appetiser";
 alias setup_teamfusion="ssh-add -D;ssh-add ~/.ssh/viktoricaloniay";
 alias setup_personal="ssh-add -D;ssh-add ~/.ssh/id_rsa";
@@ -36,3 +39,18 @@ alias setTrackpadScaling="defaults write -g com.apple.trackpad.scaling"
 alias findf="fd --type f --hidden --exclude .git --exclude Pods | fzf-tmux -p --reverse | xargs nvim"
 
 export PATH="/Users/viktorimmanuelcalonia/Library/Python/3.9/bin:/usr/local/Cellar:$PATH:$HOME/.local/scripts"
+
+alias lg="lazygit"
+
+#Xcode Simulator
+alias xcsimopenurl="xcrun simctl openurl booted"
+
+#Find File
+alias findf="fd --type f --hidden --exclude .git --exclude Pods | fzf-tmux -p | xargs nvim"
+
+#ChangeLog
+alias changelog="git-chglog -o CHANGELOG.md"
+
+alias vi="nvim"
+alias vim="nvim"
+export EDITOR="/opt/homebrew/bin/nvim"
