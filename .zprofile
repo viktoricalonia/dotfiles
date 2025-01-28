@@ -8,7 +8,7 @@ alias setup_poplar="ssh-add -D;ssh-add ~/.ssh/poplar";
 alias setup_qlaunch="ssh-add -D; ssh-add ~/.ssh/qlaunch"
 alias setup_snowmanlab="cd ~/Documents/snowmanlabs/aws-credentials-renewer-master && python3 ~/Documents/snowmanlabs/aws-credentials-renewer-master/git_auth.py && cd -"
 
-alias run_moving_script="~/Documents/appetiser/run.sh"
+alias run_moving_script="~/.local/scripts/run.sh"
 
 alias st="open -a /Applications/SourceTree.app"
 
