@@ -5,6 +5,7 @@ alias setup_appetiser="ssh-add -D;ssh-add ~/.ssh/appetiser";
 alias setup_teamfusion="ssh-add -D;ssh-add ~/.ssh/viktoricaloniay";
 alias setup_personal="ssh-add -D;ssh-add ~/.ssh/id_rsa";
 alias setup_poplar="ssh-add -D;ssh-add ~/.ssh/poplar";
+alias setup_qlaunch="ssh-add -D; ssh-add ~/.ssh/qlaunch"
 alias setup_snowmanlab="cd ~/Documents/snowmanlabs/aws-credentials-renewer-master && python3 ~/Documents/snowmanlabs/aws-credentials-renewer-master/git_auth.py && cd -"
 
 alias xplode="cd ~/Documents/personal/xplode; ./xplode; cd -"
