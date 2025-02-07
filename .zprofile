@@ -8,7 +8,8 @@ alias setup_poplar="ssh-add -D;ssh-add ~/.ssh/poplar";
 alias setup_qlaunch="ssh-add -D; ssh-add ~/.ssh/qlaunch"
 alias setup_snowmanlab="cd ~/Documents/snowmanlabs/aws-credentials-renewer-master && python3 ~/Documents/snowmanlabs/aws-credentials-renewer-master/git_auth.py && cd -"
 
-alias run_moving_script="~/.local/scripts/run.sh"
+alias run="~/.local/scripts/run.sh"
+alias focus="~/.local/scripts/focus.sh"
 
 alias st="open -a /Applications/SourceTree.app"
 
@@ -37,7 +38,8 @@ alias setTrackpadScaling="defaults write -g com.apple.trackpad.scaling"
 #Open File in NeoVIM
 alias findf="fd --type f --hidden --exclude .git --exclude Pods | fzf-tmux -p --reverse | xargs nvim"
 
-export PATH="/Users/viktorimmanuelcalonia/Library/Python/3.9/bin:/usr/local/Cellar:$PATH:$HOME/.local/scripts"
+export PATH="/Users/viktorimmanuelcalonia/Library/Python/3.9/bin:/usr/local/Cellar:$PATH"
+export PATH="$HOME/.local/scripts:$PATH"
 
 alias lg="lazygit"
 
