@@ -55,3 +55,6 @@ alias changelog="git-chglog -o CHANGELOG.md"
 alias vi="nvim"
 alias vim="nvim"
 export EDITOR="/opt/homebrew/bin/nvim"
+
+#Sourcekit-lsp
+export SDKROOT="$(xcrun --sdk iphoneos --show-sdk-path)"

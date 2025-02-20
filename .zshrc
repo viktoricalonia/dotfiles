@@ -103,3 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # BINDINGS
 
 bindkey -s ^f "tmux-sessionizer\n"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export LDFLAGS="-L/opt/homebrew/opt/ruby/include"
+
+source $HOME/.zprofile
