@@ -8,4 +8,3 @@ local options = {
     { name = "path",     group_index = 2 },
   }
 }
-

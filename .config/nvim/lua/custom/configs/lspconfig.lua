@@ -43,6 +43,21 @@ lspconfig.sourcekit.setup({
         or lspConfigUtil.find_git_ancestor(filename)
         or lspConfigUtil.root_pattern("Package.swift")(filename)
   end,
+  -- settings for showing UIKit and Foundation
+  -- settings = {
+  --   sourcekit = {
+  --     extraClangArguments = {
+  --       "-fmodules",
+  --       "-fmodule-name=UIKit",
+  --       "-fmodule-name=Foundation",
+  --     },
+  --     includePaths = {
+  --       vim.fn.systemlist("xcrun --sdk iphoneos --show-sdk-path")[1] .. "/System/Library/Frameworks",
+  --       vim.fn.systemlist("xcrun --sdk iphoneos --show-sdk-path")[1] .. "/usr/include"
+  --     }
+  --   },
+  -- },
+
 })
 
 lspconfig.eslint.setup {
