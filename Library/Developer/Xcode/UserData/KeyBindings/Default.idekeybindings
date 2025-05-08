@@ -72,6 +72,26 @@
 				<key>Alternate</key>
 				<string>NO</string>
 				<key>CommandID</key>
+				<string>IDESourceEditorExtension:com.github.CopilotForXcode.EditorExtension,IDESourceEditorExtensionCommand:com.github.CopilotForXcode.EditorExtensionCopilot.OpenChatCommand</string>
+				<key>Group</key>
+				<string>Editor Menu for Source Code</string>
+				<key>GroupID</key>
+				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
+				<key>GroupedAlternate</key>
+				<string>NO</string>
+				<key>Navigation</key>
+				<string>NO</string>
+				<key>Parent Title</key>
+				<string>GitHub Copilot</string>
+				<key>Title</key>
+				<string>Open Chat</string>
+			</dict>
+			<dict>
+				<key>Action</key>
+				<string>_invokeSourceEditorExtensionCommand:</string>
+				<key>Alternate</key>
+				<string>NO</string>
+				<key>CommandID</key>
 				<string>IDESourceEditorExtension:com.github.CopilotForXcode.EditorExtension,IDESourceEditorExtensionCommand:com.github.CopilotForXcode.EditorExtensionCopilot.OpenSettingsCommand</string>
 				<key>Group</key>
 				<string>Editor Menu for Source Code</string>
@@ -208,90 +228,6 @@
 			</dict>
 			<dict>
 				<key>Action</key>
-				<string>_invokeSourceEditorExtensionCommand:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandID</key>
-				<string>IDESourceEditorExtension:com.tid.Alignment-for-Xcode.Alignment,IDESourceEditorExtensionCommand:com.tid.XcodeSourceEditorExtension-Alignment.Alignment.SourceEditorCommand</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Alignment</string>
-				<key>Title</key>
-				<string>Align</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>_invokeSourceEditorExtensionCommand:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandID</key>
-				<string>IDESourceEditorExtension:name.lazarenko.daniel.xcsort.xcsortext,IDESourceEditorExtensionCommand:name.lazarenko.daniel.xcsort.xcsortext.SourceEditorCommand</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>xcsort</string>
-				<key>Title</key>
-				<string>Sort Lines</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>createCodeSnippetFromSelection:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEKit.CmdDefinition.CreateCodeSnippet</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEKit.CmdDefinition.CreateCodeSnippet</string>
-				<key>Group</key>
-				<string>Editor Menu for Playground</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPlaygroundEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>@</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Title</key>
-				<string>Create Code Snippet…</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>createCodeSnippetFromSelection:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEKit.CmdDefinition.CreateCodeSnippet</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEKit.CmdDefinition.CreateCodeSnippet</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>@</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Title</key>
-				<string>Create Code Snippet…</string>
-			</dict>
-			<dict>
-				<key>Action</key>
 				<string>newFolder:</string>
 				<key>Alternate</key>
 				<string>NO</string>
@@ -313,222 +249,6 @@
 				<string>New</string>
 				<key>Title</key>
 				<string>Folder</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>addMissingProtocolRequirements:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>Group</key>
-				<string>Editor Menu for Asset Catalog Comparison</string>
-				<key>GroupID</key>
-				<string>Xcode.DeltaComparisonEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@P</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Add Missing Protocol Requirements</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>addMissingProtocolRequirements:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>Group</key>
-				<string>Editor Menu for Playground</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPlaygroundEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@P</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Add Missing Protocol Requirements</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>addMissingProtocolRequirements:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.AddMissingProtocolRequirements</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@P</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Add Missing Protocol Requirements</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>extractMethod:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>Group</key>
-				<string>Editor Menu for Asset Catalog Comparison</string>
-				<key>GroupID</key>
-				<string>Xcode.DeltaComparisonEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@M</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Extract to Method</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>extractMethod:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>Group</key>
-				<string>Editor Menu for Playground</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPlaygroundEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@M</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Extract to Method</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>extractMethod:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.ExtractMethod</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@M</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Extract to Method</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>generateMemberwiseInitializer:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>Group</key>
-				<string>Editor Menu for Asset Catalog Comparison</string>
-				<key>GroupID</key>
-				<string>Xcode.DeltaComparisonEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@I</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Generate Memberwise Initializer</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>generateMemberwiseInitializer:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>Group</key>
-				<string>Editor Menu for Playground</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPlaygroundEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@I</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Generate Memberwise Initializer</string>
-			</dict>
-			<dict>
-				<key>Action</key>
-				<string>generateMemberwiseInitializer:</string>
-				<key>Alternate</key>
-				<string>NO</string>
-				<key>CommandGroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>CommandID</key>
-				<string>Xcode.IDEPegasusSourceEditor.CmdDefinition.Refactor.GenerateMemberwiseInitializer</string>
-				<key>Group</key>
-				<string>Editor Menu for Source Code</string>
-				<key>GroupID</key>
-				<string>Xcode.IDEPegasusSourceEditor.MenuDefinition.Editor</string>
-				<key>GroupedAlternate</key>
-				<string>NO</string>
-				<key>Keyboard Shortcut</key>
-				<string>~$@I</string>
-				<key>Navigation</key>
-				<string>NO</string>
-				<key>Parent Title</key>
-				<string>Refactor</string>
-				<key>Title</key>
-				<string>Generate Memberwise Initializer</string>
 			</dict>
 		</array>
 		<key>Version</key>
