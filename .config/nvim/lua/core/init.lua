@@ -28,10 +28,10 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
-opt.number = true
+-- opt.number = true
+-- opt.relativenumber = true
 opt.numberwidth = 2
-opt.relativenumber = true
-opt.ruler = false
+opt.ruler = true
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -135,5 +135,5 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()
-  require "nvchad.updater"()
+  require "nvchad.updater" ()
 end, {})
