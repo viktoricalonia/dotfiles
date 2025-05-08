@@ -24,6 +24,9 @@ M.general = {
     ["<C-j>"] = { "<C-w>j", "Window down" },
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
+    -- quick fix
+    ["<C-q>"] = { "<cmd>copen <CR>", "Open Quick fix" },
+
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
