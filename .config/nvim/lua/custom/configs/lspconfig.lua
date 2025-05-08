@@ -33,7 +33,7 @@ lspconfig.sourcekit.setup({
       return "objective-c"
     end
     if ftype == "objcpp" then
-      return "objective-cpp"
+      return "objective-c"
     end
     return ftype
   end,
@@ -43,21 +43,6 @@ lspconfig.sourcekit.setup({
         or lspConfigUtil.find_git_ancestor(filename)
         or lspConfigUtil.root_pattern("Package.swift")(filename)
   end,
-  -- settings for showing UIKit and Foundation
-  -- settings = {
-  --   sourcekit = {
-  --     extraClangArguments = {
-  --       "-fmodules",
-  --       "-fmodule-name=UIKit",
-  --       "-fmodule-name=Foundation",
-  --     },
-  --     includePaths = {
-  --       vim.fn.systemlist("xcrun --sdk iphoneos --show-sdk-path")[1] .. "/System/Library/Frameworks",
-  --       vim.fn.systemlist("xcrun --sdk iphoneos --show-sdk-path")[1] .. "/usr/include"
-  --     }
-  --   },
-  -- },
-
 })
 
 lspconfig.eslint.setup {
@@ -117,6 +102,14 @@ lspconfig.vtsls.setup {
 }
 
 lspconfig.gopls.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
+lspconfig.yamlls.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
