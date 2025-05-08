@@ -76,6 +76,7 @@ local plugins = {
       require("core.utils").load_mappings("harpoon")
     end
   },
-  require("custom.plugins.conform"),
+  -- require("custom.plugins.conform"),
+  -- require("custom.plugins.claude-code")
 }
 return plugins

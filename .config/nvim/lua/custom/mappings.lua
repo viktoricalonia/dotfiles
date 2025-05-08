@@ -66,7 +66,7 @@ M.xcodebuild = {
       "<cmd>XcodebuildToggleLogs<CR>",
       "Togggle Xcodebuild Logs"
     },
-    ["<leader>xcc"] = {
+    ["<leader>xccc"] = {
       "<cmd>XcodebuildToggleCodeCoverage<CR>",
       "Togggle Code Coverage"
     },
@@ -108,6 +108,10 @@ M.xcodebuild = {
     ["<leader>xcte"] = {
       "<cmd>XcodebuildTestExplorerToggle<CR>",
       "Toggle XcodeBuild Test Explorer"
+    },
+    ["<leader>xcc"] = {
+      "<cmd>XcodebuildCancel<CR>",
+      "Cancel Running Action"
     }
   },
   v = {
@@ -132,6 +136,16 @@ M.harpoon = {
 
     ["<C-y>"] = { function() require("harpoon"):list():prev() end, "Toggle previous buffer stored in harpoon" },
     ["<C-;>"] = { function() require("harpoon"):list():next() end, "Toggle next buffer stored in harpoon" }
+  }
+}
+
+M.claude = {
+  n = {
+    ["<leader>cl"] = { "<cmd> ClaudeCode <CR>", "Claude Code" },
+    ["<leader>cC"] = { "<cmd> ClaudeCodeContext <CR>", "Claude Code Context" },
+    ["<leader>cR"] = { "<cmd> ClaudeCodeRefactor <CR>", "Claude Code Refactor" },
+    ["<leader>cD"] = { "<cmd> ClaudeCodeDebug <CR>", "Claude Code Debug" },
+    ["<leader>cT"] = { "<cmd> ClaudeCodeTest <CR>", "Claude Code Test" }
   }
 }
 
