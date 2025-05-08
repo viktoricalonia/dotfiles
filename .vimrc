@@ -78,8 +78,6 @@ set incsearch " jumps to search word while typing
 
 syntax on
 
-set nu " Show line number
-
 "======================================
 "= Pathogen
 "======================================
