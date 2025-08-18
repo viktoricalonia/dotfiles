@@ -57,7 +57,7 @@ alias vi="nvim"
 alias vim="nvim"
 export EDITOR="/opt/homebrew/bin/nvim"
 
-export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.11.1/share/nvim/runtime"
+export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.11.3/share/nvim/runtime"
 
 #Sourcekit-lsp
 export SDKROOT="$(xcrun --sdk iphoneos --show-sdk-path)"
