@@ -3,3 +3,5 @@
 .config/github-copilot/apps.json
 .config/gh
 .config/github-copilot/xcode/1eaccfd4f024714e/conversations
+.local/bin
+.local/scripts/cloud-sql-proxy
