@@ -142,10 +142,13 @@ M.harpoon = {
 M.claude = {
   n = {
     ["<leader>cl"] = { "<cmd> ClaudeCode <CR>", "Claude Code" },
-    ["<leader>cC"] = { "<cmd> ClaudeCodeContext <CR>", "Claude Code Context" },
     ["<leader>cR"] = { "<cmd> ClaudeCodeRefactor <CR>", "Claude Code Refactor" },
-    ["<leader>cD"] = { "<cmd> ClaudeCodeDebug <CR>", "Claude Code Debug" },
-    ["<leader>cT"] = { "<cmd> ClaudeCodeTest <CR>", "Claude Code Test" }
+  }
+}
+
+M.CopilotChat = {
+  n = {
+    ["<leader>ccc"] = { "<cmd> CopilotChatToggle <CR>", "Copilot Chat Toggle" }
   }
 }
 
