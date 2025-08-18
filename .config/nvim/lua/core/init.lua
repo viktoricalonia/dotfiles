@@ -28,8 +28,8 @@ opt.smartcase = true
 opt.mouse = "a"
 
 -- Numbers
--- opt.number = true
--- opt.relativenumber = true
+opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = true
 
