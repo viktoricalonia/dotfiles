@@ -13,13 +13,13 @@ M.dap = {
       "Start or continue the debugger",
     },
 
-    ["<leader>dxd"] = { function() require("xcodebuild.integrations.dap").build_and_debug() end, "Build and Debug" },
-    ["<leader>dxr"] = { function() require("xcodebuild.integrations.dap").debug_without_build() end, "Debug Without Building" },
-    ["<leader>dxt"] = { function() require("xcodebuild.integrations.dap").debug_tests() end, "Debug Tests" },
-    ["<leader>dxT"] = { function() require("xcodebuild.integrations.dap").debug_class_tests() end, "Debug Class Tests" },
-    ["<leader>dxb"] = { function() require("xcodebuild.integrations.dap").toggle_breakpoint() end, "Toggle Breakpoint" },
-    ["<leader>dxB"] = { function() require("xcodebuild.integrations.dap").toggle_message_breakpoint() end, "Toggle Message Breakpoint" },
-    ["<leader>dxx"] = { function()
+    ["<leader>dud"] = { function() require("xcodebuild.integrations.dap").build_and_debug() end, "Build and Debug" },
+    ["<leader>dur"] = { function() require("xcodebuild.integrations.dap").debug_without_build() end, "Debug Without Building" },
+    ["<leader>dut"] = { function() require("xcodebuild.integrations.dap").debug_tests() end, "Debug Tests" },
+    ["<leader>duT"] = { function() require("xcodebuild.integrations.dap").debug_class_tests() end, "Debug Class Tests" },
+    ["<leader>dub"] = { function() require("xcodebuild.integrations.dap").toggle_breakpoint() end, "Toggle Breakpoint" },
+    ["<leader>duB"] = { function() require("xcodebuild.integrations.dap").toggle_message_breakpoint() end, "Toggle Message Breakpoint" },
+    ["<leader>dux"] = { function()
       require("xcodebuild.integrations.dap").terminate_session()
       require("dap").listeners.after["event_terminated"]["me"]()
     end,
@@ -31,91 +31,91 @@ M.dap = {
 M.xcodebuild = {
   n = {
     -- Xcodebuild
-    ["<leader>xc"] = {
+    ["<leader>uy"] = {
       "<cmd>XcodebuildPicker<CR>",
       "Show Xcodebuild Actions"
     },
-    ["<leader>xcf"] = {
+    ["<leader>uyf"] = {
       "<cmd>XcodebuildProjectManager<CR>",
       "Show Project Manager Actions"
     },
 
-    ["<leader>xcb"] = {
+    ["<leader>uyb"] = {
       "<cmd>XcodebuildBuild<CR>",
       "Build Project"
     },
-    ["<leader>xcB"] = {
+    ["<leader>uyB"] = {
       "<cmd>XcodebuildBuildForTesting<CR>",
       "Build For Testing"
     },
-    ["<leader>xcr"] = {
+    ["<leader>uyr"] = {
       "<cmd>XcodebuildBuildRun<CR>",
       "Build & Run Project"
     },
 
-    ["<leader>xct"] = {
+    ["<leader>uyt"] = {
       "<cmd>XcodebuildTest<CR>",
       "Run Tests"
     },
-    ["<leader>xcT"] = {
+    ["<leader>uyT"] = {
       "<cmd>XcodebuildTestClass<CR>",
       "Run This Test Class"
     },
 
-    ["<leader>xcl"] = {
+    ["<leader>uyl"] = {
       "<cmd>XcodebuildToggleLogs<CR>",
       "Togggle Xcodebuild Logs"
     },
-    ["<leader>xccc"] = {
+    ["<leader>uycc"] = {
       "<cmd>XcodebuildToggleCodeCoverage<CR>",
       "Togggle Code Coverage"
     },
-    ["<leader>xce"] = {
+    ["<leader>uye"] = {
       "<cmd>XcodebuildShowCodeCoverageReport<CR>",
       "Show Code Coverage Report"
     },
-    ["<leader>xcs"] = {
+    ["<leader>uys"] = {
       "<cmd>XcodebuildFailingSnapshots<CR>",
       "Show Failing Snapshots"
     },
 
-    ["<leader>xcd"] = {
+    ["<leader>uyd"] = {
       "<cmd>XcodebuildSelectDevice<CR>",
       "Select Device"
     },
-    ["<leader>xcp"] = {
+    ["<leader>uyp"] = {
       "<cmd>XcodebuildSelectTestPlan<CR>",
       "Select Test Plan"
     },
-    ["<leader>xcq"] = {
+    ["<leader>uyq"] = {
       "<cmd>Telescope quickfix<CR>",
       "Show QuickFix List"
     },
 
 
-    ["<leader>xcx"] = {
+    ["<leader>uyx"] = {
       "<cmd>XcodebuildQuickfixLine<CR>",
       "Quickfisx Line"
     },
-    ["<leader>xca"] = {
+    ["<leader>uya"] = {
       "<cmd>XcodebuildCodeActions<CR>",
       "Show code Actions"
     },
-    ["<leader>xco"] = {
+    ["<leader>uyo"] = {
       "<cmd>XcodebuildOpenInXcode<CR>",
       "Show code Actions"
     },
-    ["<leader>xcte"] = {
+    ["<leader>uyte"] = {
       "<cmd>XcodebuildTestExplorerToggle<CR>",
       "Toggle XcodeBuild Test Explorer"
     },
-    ["<leader>xcc"] = {
+    ["<leader>uyc"] = {
       "<cmd>XcodebuildCancel<CR>",
       "Cancel Running Action"
     }
   },
   v = {
-    ["<leader>xct"] = {
+    ["<leader>uyt"] = {
       "<cmd>XcodebuildTestSelected<CR>",
       "Run Selected Tests"
     },
