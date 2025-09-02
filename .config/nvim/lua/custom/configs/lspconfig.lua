@@ -3,7 +3,7 @@ local base = require("plugins.configs.lspconfig")
 
 local on_attach = base.on_attach
 local capabilities = base.capabilities
-local sourcekit_capabilities = vim.lsp.protocol.make_client_capabilities()
+local sourcekit_capabilities = capabilities
 sourcekit_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 
 local lspConfigUtil = require("lspconfig.util")
@@ -25,7 +25,7 @@ lspconfig.sourcekit.setup({
   on_attach = on_attach,
   cmd = { "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" },
   formatting = {
-    on_save = true,
+    on_save = false,
   },
   filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp", "objc", "objcpp" },
   get_language_id = function(_, ftype)
@@ -45,20 +45,94 @@ lspconfig.sourcekit.setup({
   end,
 })
 
-lspconfig.eslint.setup {
+lspconfig.copilot.setup {{
+  init_options = {
+    editorInfo = {
+      name = 'Neovim',
+      version = tostring(vim.version()),
+    },
+    editorPluginInfo = {
+      name = 'Neovim',
+      version = tostring(vim.version()),
+    },
+  },
+  cmd = { "copilot-language-server", "--stdio" },
+  root_markers = { '.git' },
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
+
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspCopilotSignIn', function()
+      sign_in(bufnr, client)
+    end, { desc = 'Sign in Copilot with GitHub' })
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspCopilotSignOut', function()
+      sign_out(bufnr, client)
+    end, { desc = 'Sign out Copilot with GitHub' })
   end,
+  settings = {
+    telemetry = {
+      telemetryLevel = 'off',
+    },
+  },
   capabilities = capabilities,
 }
 
 lspconfig.ts_ls.setup {
+  init_options = { hostInfo = 'neovim' },
+  cmd = { 'typescript-language-server', '--stdio' },
+  formatting = {
+    on_save = false,
+  },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+  root_dir = function(bufnr, on_dir)
+    -- The project root is where the LSP can be started from
+    -- As stated in the documentation above, this LSP supports monorepos and simple projects.
+    -- We select then from the project root, which is identified by the presence of a package
+    -- manager lock file.
+    local root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+    -- Give the root markers equal priority by wrapping them in a table
+    root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers } or root_markers
+    local project_root = vim.fs.root(bufnr, root_markers)
+    if not project_root then
+      return
+    end
+
+    on_dir(project_root)
+  end,
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
+
+    -- ts_ls provides `source.*` code actions that apply to the whole file. These only appear in
+    -- `vim.lsp.buf.code_action()` if specified in `context.only`.
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspTypescriptSourceAction', function()
+      local source_actions = vim.tbl_filter(function(action)
+        return vim.startswith(action, 'source.')
+      end, client.server_capabilities.codeActionProvider.codeActionKinds)
+
+      vim.lsp.buf.code_action({
+        context = {
+          only = source_actions,
+        },
+      })
+    end, {})
   end,
   capabilities = capabilities,
+  handlers = {
+    -- handle rename request for certain code actions like extracting functions / types
+    ['_typescript.rename'] = function(_, result, ctx)
+      local client = assert(vim.lsp.get_client_by_id(ctx.client_id))
+      vim.lsp.util.show_document({
+        uri = result.textDocument.uri,
+        range = {
+          start = result.position,
+          ['end'] = result.position,
+        },
+      }, client.offset_encoding)
+      vim.lsp.buf.rename()
+      return vim.NIL
+    end,
+  },
 }
 
 lspconfig.jsonls.setup {
@@ -94,6 +168,9 @@ lspconfig.apex_ls.setup {
 }
 
 lspconfig.vtsls.setup {
+  formatting = {
+    on_save = false,
+  },
   settings = {
     vtsls = {
       tsserver = {
@@ -137,3 +214,8 @@ lspconfig.yamlls.setup {
   end,
   capabilities = capabilities,
 }
+
+lspconfig.html.setup {
+  capabilities = capabilities
+}
+
