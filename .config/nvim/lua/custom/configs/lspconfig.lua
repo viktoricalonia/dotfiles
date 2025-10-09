@@ -77,6 +77,14 @@ lspconfig.html.setup {
   capabilities = capabilities,
 }
 
+lspconfig.ruby_lsp.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
+
 lspconfig.vimls.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
@@ -99,7 +107,7 @@ lspconfig.vtsls.setup {
       tsserver = {
         globalPlugins = {
           name = '@vue/typescript-plugin',
-          location = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server',
+          location = vim.fn.expand('$MASON/packages') .. '/vue-language-server' .. '/node_modules/@vue/language-server',
           languages = { 'vue' },
           configNamespace = 'typescript',
         },
