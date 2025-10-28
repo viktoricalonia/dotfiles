@@ -23,17 +23,3 @@ dap.configurations.javascript = {
     cwd = "${workspaceFolder}"
   },
 }
-
-local dapDebugServer = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug-adapter"
-dap.adapters.pwa-node = {
-  type = "server",
-  host = "localhost",
-  port = "${port}",
-  executable = {
-    command = "node",
-    args = {
-      dapDebugServer,
-      "${port}"
-    },
-  },
-}
