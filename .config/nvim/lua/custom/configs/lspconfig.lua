@@ -12,7 +12,7 @@ local lspconfig = require('lspconfig')
 -- check setup configs here
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
 
--- lspconfig.clangd.setup {
+-- vim.lsp.config('clangd', {
 --   on_attach = function(client, bufnr)
 --     client.server_capabilities.signatureHelpProvider = false
 --     on_attach(client, bufnr)
@@ -29,13 +29,8 @@ lspconfig.sourcekit.setup({
   },
   filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp", "objc", "objcpp" },
   get_language_id = function(_, ftype)
-    if ftype == "objc" then
-      return "objective-c"
-    end
-    if ftype == "objcpp" then
-      return "objective-c"
-    end
-    return ftype
+    local t = { objc = 'objective-c', objcpp = 'objective-cpp' }
+    return t[ftype] or ftype
   end,
   root_dir = function(filename, _)
     return lspConfigUtil.root_pattern("buildServer.json")(filename)
@@ -45,63 +40,70 @@ lspconfig.sourcekit.setup({
   end,
 })
 
-lspconfig.eslint.setup {
+vim.lsp.config('eslint', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('eslint')
 
-lspconfig.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('ts_ls')
 
-lspconfig.jsonls.setup {
+vim.lsp.config('jsonls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('jsonls')
 
-lspconfig.html.setup {
+vim.lsp.config('html', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('html')
 
-lspconfig.ruby_lsp.setup {
+vim.lsp.config('ruby_lsp', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('ruby_lsp')
 
-lspconfig.vimls.setup {
+vim.lsp.config('vimls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('vimls')
 
-lspconfig.apex_ls.setup {
+vim.lsp.config('apex_ls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('apex_ls')
 
-lspconfig.vtsls.setup {
+vim.lsp.config('vtsls', {
   settings = {
     vtsls = {
       tsserver = {
@@ -120,39 +122,35 @@ lspconfig.vtsls.setup {
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('vtsls')
 
-lspconfig.volar.setup {
+vim.lsp.config('volar', {
   on_attach = function(client, bufnr)
     client.resolved_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('volar')
 
-lspconfig.gopls.setup {
+vim.lsp.config('gopls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('gopls')
 
-lspconfig.html.setup {
+vim.lsp.config('yamlls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
-
-lspconfig.yamlls.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
+})
+vim.lsp.enable('gopls')
 
 -----@brief
 ---
@@ -231,7 +229,7 @@ local function sign_out(_, client)
   )
 end
 
-lspconfig.copilot.setup({
+vim.lsp.config('copilot', {
   cmd = { "copilot-language-server", "--stdio" },
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
@@ -247,3 +245,4 @@ lspconfig.copilot.setup({
   root_markers = { ".git/", "package.json", "copilot.config.json" },
   settings = { telemetry = { enable = false } },
 })
+vim.lsp.enable('copilot')
