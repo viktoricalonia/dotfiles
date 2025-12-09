@@ -21,11 +21,23 @@ local lspconfig = require('lspconfig')
 -- }
 
 lspconfig.sourcekit.setup({
-  capabilities = sourcekit_capabilities,
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+    textDocument = {
+      diagnostic = {
+        dynamicRegistration = true,
+        relatedDocumentSupport = true,
+      },
+    },
+  },
   on_attach = on_attach,
   cmd = { "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" },
   formatting = {
-    on_save = true,
+    on_save = false,
   },
   filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp", "objc", "objcpp" },
   get_language_id = function(_, ftype)
