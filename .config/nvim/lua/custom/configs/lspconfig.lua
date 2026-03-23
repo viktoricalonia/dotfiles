@@ -1,6 +1,14 @@
 dofile(vim.g.base46_cache .. "lsp")
 local base = require("plugins.configs.lspconfig")
 
+-- Fix for LSP sync nil prev_line error (incremental sync race condition)
+-- Forces full document sync instead of incremental to prevent buffer state mismatches
+vim.lsp.config('*', {
+  flags = {
+    allow_incremental_sync = false,
+  },
+})
+
 local on_attach = base.on_attach
 local capabilities = base.capabilities
 local sourcekit_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -51,6 +59,7 @@ lspconfig.sourcekit.setup({
         or lspConfigUtil.root_pattern("Package.swift")(filename)
   end,
 })
+vim.lsp.enable('sourcekit')
 
 vim.lsp.config('eslint', {
   on_attach = function(client, bufnr)
@@ -137,15 +146,6 @@ vim.lsp.config('vtsls', {
 })
 vim.lsp.enable('vtsls')
 
-vim.lsp.config('volar', {
-  on_attach = function(client, bufnr)
-    client.resolved_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-})
-vim.lsp.enable('volar')
-
 vim.lsp.config('gopls', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
@@ -163,6 +163,15 @@ vim.lsp.config('yamlls', {
   capabilities = capabilities,
 })
 vim.lsp.enable('gopls')
+
+vim.lsp.config('kotlin_lsp', {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+})
+vim.lsp.enable('kotlin_lsp')
 
 -----@brief
 ---

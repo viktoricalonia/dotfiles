@@ -60,6 +60,7 @@ vim.lsp.config("lua_ls", {
     },
   },
 })
+vim.lsp.enable('lua_ls')
 
 -- require("lspconfig").lua_ls.setup {
 --   on_attach = M.on_attach,
