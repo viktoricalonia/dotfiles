@@ -123,3 +123,17 @@ export PATH="$HOME/.local/bin:$PATH"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 source $HOME/.zprofile
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Ensure nvm-managed node takes priority over homebrew's node
+export PATH="$NVM_DIR/versions/node/v24.12.0/bin:$PATH"
+
+export JAVA_HOME="/Users/viktoricalonia/Library/Java/JavaVirtualMachines/jbr-17.0.7/Contents/Home"
+
+export ANDROID_HOME=$HOME/Library/Android/sdk 
+export PATH=$PATH:$ANDROID_HOME/emulator 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+
+
+unset SDKROOT
