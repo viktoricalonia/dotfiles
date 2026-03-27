@@ -17,9 +17,6 @@ sourcekit_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = tru
 local lspConfigUtil = require("lspconfig.util")
 local lspconfig = require('lspconfig')
 
--- check setup configs here
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
-
 -- vim.lsp.config('clangd', {
 --   on_attach = function(client, bufnr)
 --     client.server_capabilities.signatureHelpProvider = false
@@ -28,7 +25,7 @@ local lspconfig = require('lspconfig')
 --   capabilities = capabilities,
 -- }
 
-lspconfig.sourcekit.setup({
+vim.lsp.config('sourcekit', {
   capabilities = {
     workspace = {
       didChangeWatchedFiles = {
@@ -43,7 +40,7 @@ lspconfig.sourcekit.setup({
     },
   },
   on_attach = on_attach,
-  cmd = { "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" },
+  cmd = { "sourcekit-lsp" },
   formatting = {
     on_save = false,
   },

@@ -5,3 +5,17 @@
 .config/github-copilot/xcode/1eaccfd4f024714e/conversations
 .local/bin
 .local/scripts/cloud-sql-proxy
+/.config/gcloud
+/.config/github-copilot
+/.local/pipx
+/Library/Developer/CoreSimulator/Devices
+/Library/Developer/XCPGDevices/*
+/Library/Developer/Xcode/DerivedData
+/Library/Developer/Xcode/Products
+/Library/Developer/Xcode/UserData/Capabilities
+/Library/Developer/Xcode/UserData/IB Support/Simulator Devices
+/Library/Developer/Xcode/UserData/XcodeCloud
+/Library/Developer/Xcode/UserData/IDEEditorInteractivityHistory
+/Library/Developer/Xcode/iOS DeviceSupport/iPhone12,5 26.3.1 (23D771330a)
+/Library/Developer/Xcode/SDKToSimulatorIndexMapping.plist
+/Library/Developer/Xcode/XcodeToMetalToolchainIndexMapping.plist

@@ -28,7 +28,6 @@ local function setupListeners()
     end
   end
 end
-
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
@@ -36,7 +35,6 @@ return {
   },
   config = function()
     require("core.utils").load_mappings("dap")
-    require("custom.configs.nvim-dap")
     setupListeners()
   end,
 }

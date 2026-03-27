@@ -2,10 +2,10 @@ local dap = require("dap")
 dap.defaults.fallback.switchbuf = "usetab,uselast"
 
 -- TODO: make sure to set path to your codelldb
-local codelldbPath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb"
-local liblldbPath = "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/Current/LLDB"
+-- local codelldbPath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb"
+-- local liblldbPath = "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/Current/LLDB"
 local xcodebuild = require("xcodebuild.integrations.dap")
-xcodebuild.setup(codelldbPath, liblldbPath)
+xcodebuild.setup()
 
 local define = vim.fn.sign_define
 define("DapBreakpoint", { text = "", texthl = "DiagnosticError", linehl = "", numhl = "" })
@@ -23,3 +23,4 @@ dap.configurations.javascript = {
     cwd = "${workspaceFolder}"
   },
 }
+

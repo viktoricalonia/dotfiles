@@ -9,6 +9,11 @@ return {
   },
   config       = function()
     require("xcodebuild").setup({
+      integrations = {
+        pymobiledevice = {
+          enabled = true
+        }
+      },
       show_build_progress_bar = false,
       logs = {
         auto_open_on_success_tests = false,
@@ -50,7 +55,7 @@ return {
       },
       code_coverage = {
         enabled = true,
-      },
+      }
     })
     require("core.utils").load_mappings("xcodebuild")
   end,
