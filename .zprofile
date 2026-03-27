@@ -57,7 +57,7 @@ alias vi="nvim"
 alias vim="nvim"
 export EDITOR="/opt/homebrew/bin/nvim"
 
-export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.11.5_1/share/nvim/runtime"
+export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.11.6/share/nvim/runtime"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
@@ -65,5 +65,3 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 # Commented out - breaks Swift Package Manager and Skip tools
 # export SDKROOT="$(xcrun --sdk iphoneos --show-sdk-path)"
 
-# Added by swiftly
-. "/Users/viktoricalonia/.swiftly/env.sh"
