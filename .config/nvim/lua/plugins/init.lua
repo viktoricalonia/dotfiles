@@ -1,10 +1,4 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
-
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -16,9 +10,10 @@ return {
   require "custom.plugins.lualine",
   require "custom.plugins.nvim-dap",
   require "custom.plugins.nvim-dapui",
-  require "custom.plugins.fidget",
+  require "custom.plugins.fidget-nvim",
   require "custom.plugins.xcodebuild",
   require "custom.plugins.harpoon-nvim",
+  require "custom.plugins.conform-nvim",
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },

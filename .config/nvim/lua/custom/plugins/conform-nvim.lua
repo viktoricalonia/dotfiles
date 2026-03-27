@@ -38,17 +38,18 @@ end
 
 return {
   "stevearc/conform.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPre", "BufWritePre", "BufNewFile" },
   config = function()
     local conform = require("conform")
 
     conform.setup({
       formatters_by_ft = {
         swift = { "swiftformat_ext" },
+        lua = { "stylua" },
+        css = { "prettier" },
+        html = { "prettier" },
       },
-      format_on_save = function(bufnr)
-        return { timeout_ms = 500, lsp_fallback = true }
-      end,
+      format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
       log_level = vim.log.levels.ERROR,
       formatters = {
         swiftformat_ext = {
