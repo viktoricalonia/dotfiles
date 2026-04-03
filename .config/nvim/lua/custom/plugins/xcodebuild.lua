@@ -57,6 +57,9 @@ return {
         enabled = true,
       }
     })
+    local xcodebuilddap = require("xcodebuild.integrations.dap")
+    xcodebuilddap.setup()
+
     require("core.utils").load_mappings("xcodebuild")
   end,
 }
