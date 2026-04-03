@@ -57,7 +57,7 @@ alias vi="nvim"
 alias vim="nvim"
 export EDITOR="/opt/homebrew/bin/nvim"
 
-export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.11.6/share/nvim/runtime"
+export VIMRUNTIME="/opt/homebrew/Cellar/neovim/0.12.0/share/nvim/runtime"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 
