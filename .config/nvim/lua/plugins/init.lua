@@ -6,7 +6,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-  require "custom.plugins.copilot-chat",
   require "custom.plugins.lualine",
   require "custom.plugins.nvim-dap",
   require "custom.plugins.nvim-dapui",
