@@ -105,7 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 # BINDINGS
 
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^w "tmux-sessionizer\n"
+bindkey -s ^f "findf\n"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
 export LDFLAGS="-L/opt/homebrew/opt/ruby/include"
