@@ -1,7 +1,7 @@
 local cachedConfig = nil
 local searchedForConfig = false
 
-local function find_config()
+local function find_swift_config()
   if searchedForConfig then
     return cachedConfig
   end
@@ -48,6 +48,7 @@ return {
         lua = { "stylua" },
         css = { "prettier" },
         html = { "prettier" },
+        kotlin = { "swiftformat_ext" },
       },
       format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
       log_level = vim.log.levels.ERROR,
@@ -57,7 +58,7 @@ return {
           args = function()
             return {
               "--config",
-              find_config() or "~/.config/nvim/.swiftformat", -- update fallback path if needed
+              find_swift_config() or "~/.config/nvim/.swiftformat", -- update fallback path if needed
               "--stdinpath",
               "$FILENAME",
             }
@@ -65,7 +66,7 @@ return {
           range_args = function(ctx)
             return {
               "--config",
-              find_config() or "~/.config/nvim/.swiftformat", -- update fallback path if needed
+              find_swift_config() or "~/.config/nvim/.swiftformat", -- update fallback path if needed
               "--linerange",
               ctx.range.start[1] .. "," .. ctx.range["end"][1],
             }
