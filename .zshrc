@@ -129,7 +129,8 @@ source $HOME/.zprofile
 # Ensure nvm-managed node takes priority over homebrew's node
 export PATH="$NVM_DIR/versions/node/v24.12.0/bin:$PATH"
 
-export JAVA_HOME="/Users/viktoricalonia/Library/Java/JavaVirtualMachines/jbr-17.0.7/Contents/Home"
+# Always use android studio java
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk 
 export PATH=$PATH:$ANDROID_HOME/emulator 
