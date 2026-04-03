@@ -6,7 +6,7 @@ brew install lazygit fzf fd neovim ripgrep stow tree-sitter-cli
 # stow config
 stow . --target=$HOME --restow --adopt
 # Install Web tools
-brew install node 
+brew install node swiftformat
 # Install xcodebuild.nvim dependency
 brew install xcp xcode-build-server xcbeautify pipx rg jq coreutils
 pipx install pymobiledevice3
