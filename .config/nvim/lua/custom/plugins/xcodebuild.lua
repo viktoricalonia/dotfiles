@@ -1,7 +1,6 @@
-local progress_handle
-
 return {
   "wojciech-kulik/xcodebuild.nvim",
+  ft           = { "cpp", "c", "swift", "html", "objc", "objcpp" },
   event        = "VeryLazy",
   dependencies = {
     "nvim-telescope/telescope.nvim",
