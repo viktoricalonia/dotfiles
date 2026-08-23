@@ -48,7 +48,7 @@ return {
         lua = { "stylua" },
         css = { "prettier" },
         html = { "prettier" },
-        kotlin = { "swiftformat_ext" },
+        kotlin = { "ktfmt" },
       },
       format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
       log_level = vim.log.levels.ERROR,

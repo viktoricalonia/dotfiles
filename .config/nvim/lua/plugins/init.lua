@@ -6,13 +6,16 @@ return {
       require "configs.lspconfig"
     end,
   },
-  require "custom.plugins.lualine",
   require "custom.plugins.nvim-dap",
   require "custom.plugins.nvim-dapui",
   require "custom.plugins.fidget-nvim",
   require "custom.plugins.xcodebuild",
   require "custom.plugins.harpoon-nvim",
   require "custom.plugins.conform-nvim",
+  require "custom.plugins.droid-nvim",
+  require "custom.plugins.snacks",
+  require "custom.plugins.telescope-ui-select",
+  -- require "custom.plugins.lualine",
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
