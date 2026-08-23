@@ -139,4 +139,6 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 
+export ENABLE_TOOL_SEARCH=true
+
 unset SDKROOT

@@ -65,3 +65,6 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 # Commented out - breaks Swift Package Manager and Skip tools
 # export SDKROOT="$(xcrun --sdk iphoneos --show-sdk-path)"
 
+
+# Added by swiftly
+. "/Users/viktoricalonia/.swiftly/env.sh"
