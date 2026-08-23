@@ -1,6 +1,9 @@
 dofile(vim.g.base46_cache .. "lsp")
 local base = require("plugins.configs.lspconfig")
 
+-- check setup configs here
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#jsonls
+
 -- Fix for LSP sync nil prev_line error (incremental sync race condition)
 -- Forces full document sync instead of incremental to prevent buffer state mismatches
 vim.lsp.config('*', {
@@ -164,6 +167,8 @@ vim.lsp.enable('gopls')
 vim.lsp.config('kotlin_lsp', {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
