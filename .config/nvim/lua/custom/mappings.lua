@@ -24,6 +24,13 @@ M.general = {
 
     -- close buffers
     ["<leader>xx"] = { "<cmd> bufdo bd <CR>", "Close Buffers" },
+
+    ["<A-l>"] = {
+      function()
+        require("nvchad.term").toggle { pos = "float", id = "fa", cmd = 'lazygit' }
+      end,
+      "Toggle LazyGit"
+    }
   }
 }
 
@@ -364,6 +371,43 @@ M.lspconfig = {
       "LSP code action",
     },
   },
+}
+
+M.droid = {
+  n = {
+    ["<leader>adr"] = {
+      "<cmd>DroidRun<CR>",
+      "Droid Run"
+    },
+    ["<leader>adb"] = {
+      "<cmd>DroidBuild<CR>",
+      "Droid Build"
+    },
+    ["<leader>adl"] = {
+      "<cmd>DroidLogcat<CR>",
+      "Droid Logcat"
+    },
+    ["<leader>add"] = {
+      "<cmd>DroidDevices<CR>",
+      "Set Droid Devices"
+    },
+    ["<leader>adv"] = {
+      "<cmd>DroidBuildVariants<CR>",
+      "Droid Build Variants"
+    },
+    ["<leader>ads"] = {
+      "<cmd>DroidSync<CR>",
+      "Droid Sync"
+    },
+    ["<leader>adc"] = {
+      "<cmd>DroidClean<CR>",
+      "Droid Clean"
+    },
+    ["<leader>adcd"] = {
+      "<cmd>DroidClearData<CR>",
+      "Droid Clear Data"
+    },
+  }
 }
 
 return M
